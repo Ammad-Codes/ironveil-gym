@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IRONVEIL — Private Performance Club</title>
+  <meta name="description" content="IRONVEIL is a private performance club: elite coaching, curated classes, a recovery atelier and a membership limited to 480 people.">
+  <meta name="theme-color" content="#0a0a0b">
+  <meta property="og:title" content="IRONVEIL — Private Performance Club">
+  <meta property="og:description" content="Discipline, refined. A private performance club with elite coaching and a recovery atelier.">
+  <meta property="og:type" content="website">
+
+  <!-- Inline favicon (no extra request) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0a0b'/%3E%3Cpath d='M16 4l10 6v12l-10 6-10-6V10z' fill='none' stroke='%23c6a15b' stroke-width='2'/%3E%3Cpath d='M16 10v12' stroke='%23c6a15b' stroke-width='2'/%3E%3C/svg%3E">
+
+  <!-- Fonts: elegant serif display + clean sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Mark that JavaScript is available so reveal animations only hide content when they can run -->
+  <script>document.documentElement.classList.add('js');</script>
+  <noscript>
+    <style>
+      #preloader { display: none; }
+      body.is-loading { overflow: auto; }
+      .reveal { opacity: 1 !important; transform: none !important; }
+    </style>
+  </noscript>
+</head>
+
+<body class="is-loading">
+
+  <!-- SVG icon sprite (inline, no libraries) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 12h16m-6-6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M20 12H4m6-6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 20V4m-6 6l6-6 6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+      <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="9.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 10.5V8a4 4 0 018 0v2.5M12 14.5v2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+      <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19c0-8 5-13 14-14 0 9-5 14-13 14M5 19c2-4 5-7 9-9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-pulse" viewBox="0 0 24 24"><path d="M3 12h4l2.5-6 4 12 2.5-6H21" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9l-5.2 2.8 1-5.9L3.5 9.7l5.9-.8z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 005 9.5C5 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.5 4h3l1.5 4-2 1.5a11 11 0 005.5 5.5l1.5-2 4 1.5v3a2 2 0 01-2 2A15 15 0 014.5 6a2 2 0 012-2z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="13" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 7.500V12l3 2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+      <symbol id="i-quote" viewBox="0 0 24 24"><path d="M9.5 6C6 7 4 10 4 13.500V18h6v-6H7c0-2 1-3.5 3.5-4.500zm9 0C15 7 13 10 13 13.500V18h6v-6h-3c0-2 1-3.5 3.5-4.500z" fill="currentColor"/></symbol>
+      <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4.5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3.6" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="16.8" cy="7.2" r="1" fill="currentColor"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+      <symbol id="i-youtube" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="3.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10.5 9.500v5l4.2-2.500z" fill="currentColor"/></symbol>
+      <symbol id="i-logo" viewBox="0 0 32 32"><path d="M16 3l11 6.500v13L16 29 5 22.500v-13z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M16 9v14M11 12.500v7M21 12.500v7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    </defs>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Preloader: progress line, then a curtain that splits open -->
+  <div id="preloader" aria-hidden="true">
+    <div class="pl-inner">
+      <svg class="pl-logo" width="44" height="44"><use href="#i-logo"/></svg>
+      <p class="pl-word">IRONVEIL</p>
+      <div class="pl-bar"><span></span></div>
+    </div>
+  </div>
+
+  <!-- Page chrome -->
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <header id="site-header" class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="IRONVEIL — back to top">
+        <svg width="30" height="30" aria-hidden="true"><use href="#i-logo"/></svg>
+        <span>IRONVEIL</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#classes">Classes</a></li>
+          <li><a href="#timetable">Timetable</a></li>
+          <li><a href="#pricing">Membership</a></li>
+          <li><a href="#transformations">Results</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a class="btn btn-primary btn-magnetic header-cta" href="#contact"><span>Book a tour</span></a>
+
+      <button class="hamburger" type="button" aria-expanded="false" aria-controls="menu-overlay" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Full-screen mobile menu -->
+  <div id="menu-overlay" class="menu-overlay" aria-hidden="true" inert>
+    <nav class="menu-nav" aria-label="Mobile">
+      <ul class="menu-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#classes">Classes</a></li>
+        <li><a href="#timetable">Timetable</a></li>
+        <li><a href="#pricing">Membership</a></li>
+        <li><a href="#transformations">Results</a></li>
+        <li><a href="#calculator">Calculator</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <p class="menu-foot">By invitation &amp; private tour only<br><a href="mailto:membership@ironveil.example">membership@ironveil.example</a></p>
+    </nav>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section id="top" class="hero" aria-labelledby="hero-title">
+      <div class="hero-media">
+        <img data-parallax="0.12" src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?auto=format&amp;fit=crop&amp;w=2000&amp;q=75" alt="A dimly lit private training floor with rows of barbells and racks" width="2000" height="1333" fetchpriority="high">
+      </div>
+      <div class="hero-shade" aria-hidden="true"></div>
+
+      <div class="container hero-content">
+        <p class="eyebrow hero-eyebrow">Private Performance Club</p>
+        <h1 id="hero-title" class="hero-title">
+          <span class="line"><span>Discipline,</span></span>
+          <span class="line"><span><em>refined</em> in iron.</span></span>
+        </h1>
+        <p class="hero-lead">Four hundred and eighty members. Twenty-four coaches. One uncompromising standard. IRONVEIL is where serious training meets quiet luxury.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary btn-magnetic" href="#contact"><span>Book a private tour</span><svg width="18" height="18" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+          <a class="btn btn-ghost btn-magnetic" href="#classes"><span>Explore classes</span></a>
+        </div>
+      </div>
+
+      <a class="scroll-hint" href="#about" aria-label="Scroll to the About section"><span>Scroll</span></a>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats" aria-label="IRONVEIL in numbers">
+      <div class="container stats-grid" data-stagger>
+        <div class="stat">
+          <p class="stat-num"><span class="counter" data-target="480">0</span></p>
+          <p class="stat-label">Members, capped</p>
+        </div>
+        <div class="stat">
+          <p class="stat-num"><span class="counter" data-target="24">0</span></p>
+          <p class="stat-label">Elite coaches</p>
+        </div>
+        <div class="stat">
+          <p class="stat-num"><span class="counter" data-target="62">0</span></p>
+          <p class="stat-label">Weekly sessions</p>
+        </div>
+        <div class="stat">
+          <p class="stat-num"><span class="counter" data-target="98" data-suffix="%">0</span></p>
+          <p class="stat-label">Member retention</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Marquee ribbon (decorative) -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Strength</span><i>◆</i><span>Conditioning</span><i>◆</i><span>Boxing</span><i>◆</i><span>Recovery</span><i>◆</i><span>Mobility</span><i>◆</i><span>Longevity</span><i>◆</i>
+        <span>Strength</span><i>◆</i><span>Conditioning</span><i>◆</i><span>Boxing</span><i>◆</i><span>Recovery</span><i>◆</i><span>Mobility</span><i>◆</i><span>Longevity</span><i>◆</i>
+      </div>
+    </div>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="section about" aria-labelledby="about-title">
+      <div class="container about-grid">
+        <div class="about-media reveal">
+          <div class="frame frame-lg">
+            <img data-parallax="0.1" src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&amp;fit=crop&amp;w=1100&amp;q=75" alt="Bright, spacious performance floor with machines and natural light" width="1100" height="1375" loading="lazy">
+          </div>
+          <div class="frame frame-sm">
+            <img data-parallax="0.18" src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&amp;fit=crop&amp;w=700&amp;q=75" alt="Member performing a heavy barbell curl" width="700" height="875" loading="lazy">
+          </div>
+          <p class="est" aria-hidden="true">Est.<br><strong>2011</strong></p>
+        </div>
+
+        <div class="about-copy">
+          <p class="eyebrow reveal">The Club</p>
+          <h2 id="about-title" class="section-title reveal">A sanctuary for those who <em>train with intent</em></h2>
+          <p class="lead reveal">IRONVEIL is not a gym that happens to be expensive. It is a deliberately small club, designed around one idea: when the environment is exacting, the person inside it rises to meet it.</p>
+          <p class="reveal">From the hand-finished platforms to the whisper-quiet recovery suites, every detail exists to remove friction between you and the work. Our coaches are sport scientists, former athletes and obsessive craftspeople. Our members are founders, surgeons, artists and athletes who value discretion as much as results.</p>
+
+          <ul class="pillars" data-stagger>
+            <li>
+              <svg width="28" height="28" aria-hidden="true"><use href="#i-lock"/></svg>
+              <div><h3>Capped membership</h3><p>Never crowded. Never a queue for a rack.</p></div>
+            </li>
+            <li>
+              <svg width="28" height="28" aria-hidden="true"><use href="#i-pulse"/></svg>
+              <div><h3>Performance lab</h3><p>Biometrics, VO₂ testing and quarterly reviews.</p></div>
+            </li>
+            <li>
+              <svg width="28" height="28" aria-hidden="true"><use href="#i-leaf"/></svg>
+              <div><h3>Recovery atelier</h3><p>Cold plunge, thermal suite and guided mobility.</p></div>
+            </li>
+            <li>
+              <svg width="28" height="28" aria-hidden="true"><use href="#i-star"/></svg>
+              <div><h3>Concierge service</h3><p>Towels, nutrition and bookings handled for you.</p></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CLASSES ============ -->
+    <section id="classes" class="section classes" aria-labelledby="classes-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Signature Classes</p>
+          <h2 id="classes-title" class="section-title">Eight disciplines, <em>one standard</em></h2>
+          <p class="section-sub">Small groups of twelve or fewer. Every session is coached, scaled and tracked.</p>
+        </header>
+
+        <div class="filters reveal" role="group" aria-label="Filter classes by category">
+          <button type="button" class="filter-btn is-active" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="filter-btn" data-filter="strength" aria-pressed="false">Strength</button>
+          <button type="button" class="filter-btn" data-filter="cardio" aria-pressed="false">Cardio</button>
+          <button type="button" class="filter-btn" data-filter="boxing" aria-pressed="false">Boxing</button>
+          <button type="button" class="filter-btn" data-filter="yoga" aria-pressed="false">Yoga</button>
+          <button type="button" class="filter-btn" data-filter="hiit" aria-pressed="false">HIIT</button>
+        </div>
+
+        <div class="class-grid" id="class-grid" data-stagger>
+          <article class="class-card" data-cat="strength">
+            <div class="card-media"><img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&amp;fit=crop&amp;w=900&amp;q=75" alt="Barbell loaded on a rubber floor" width="900" height="1125" loading="lazy"></div>
+            <div class="card-body">
+              <span class="card-tag">Strength</span>
+              <h3>Iron Foundations</h3>
+              <p>Master the squat, press, hinge and pull with meticulous coaching.</p>
+              <p class="card-meta"><span>60 min</span><span>Intensity ●●●○</span></p>
+            </div>
+          </article>
+          <article class="class-card" data-cat="strength">
+            <div class="card-media"><img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&amp;fit=crop&amp;w=900&amp;q=75" alt="Woman lifting a barbell in monochrome light" width="900" height="1125" loading="lazy"></div>
+            <div class="card-body">
+              <span class="card-tag">Strength</span>
+              <h3>Barbell Atelier</h3>
+              <p>Olympic lifting technique in an intimate, high-feedback setting.</p>
+              <p class="card-meta"><span>75 min</span><span>Intensity ●●●●</span></p>
+            </div>
+          </article>
+          <article class="class-card" data-cat="cardio">
+            <div class="card-media"><img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&amp;fit=crop&amp;w=900&amp;q=75" alt="Runners silhouetted against a blue morning sky" width="900" height="1125" loading="lazy"></div>
+            <div class="card-body">
+              <span class="card-tag">Cardio</span>
+              <h3>Dawn Tempo Run</h3>
+              <p>Pace-driven endurance work led by our performance coaches.</p>
+              <p class="card-meta"><span>45 min</span><span>Intensity ●●○○</span></p>
+            </div>
+          </article>
+          <article class="class-card" data-cat="cardio">
+            <div class="card-media"><img src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&amp;fit=crop&amp;w=900&amp;q=75" alt="Rows of cardio machines in a quiet training hall" width="900" height="1125" loading="lazy"></div>
+            <div class="card-body">
+              <span class="card-tag">Cardio</span>
+              <h3>Endurance Lab</h3>
+              <p>Zone-based aerobic training built around your own heart-rate data.</p>
+              <p class="card-meta"><span>50 min</span><span>Intensity ●●○○</span></p>
+            </div>
+          </article>
+          <article class="class-card" data-cat="boxing">
+            <div class="card-media"><img src="https://images.unsplash.com/photo-1517438322307-e67111335449?auto=format&amp;fit=crop&amp;w=900&amp;q=75" alt="Coach holding pads while a boxer throws a jab" width="900" height="1125" loading="lazy"></div>
+            <div class="card-body">
+              <span class="card-tag">Boxing</span>
+              <h3>Pad Work</h3>
+              <p>One-to-one rhythm, footwork and combinations with a pro coach.</p>
+              <p class="card-meta"><span>55 min</span><span>Intensity ●●●○</span></p>
+            </div>
+          </article>
+          <article class="class-card" data-cat="boxing">
+            <div class="card-media"><img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&amp;fit=crop&amp;w=900&amp;q=75" alt="Black boxing gloves resting on the ring floor" width="900" height="1125" loading="lazy"></div>
+            <div class="card-body">
+              <span class="card-tag">Boxing</span>
+              <h3>Glove &amp; Granite</h3>
+              <p>Bag rounds, defence drills and conditioning finishers.</p>
+              <p class="card-meta"><span>60 min</span><span>Intensity ●●●●</span></p>
+            </div>
+          </article>
+          <article class="class-card" data-cat="yoga">
+            <div class="card-media"><img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&amp;fit=crop&amp;w=900&amp;q=75" alt="Silhouette of a person in a yoga pose at sunset" width="900" height="1125" loading="lazy"></div>
+            <div class="card-body">
+              <span class="card-tag">Yoga</span>
+              <h3>Dusk Flow</h3>
+              <p>Slow, deliberate mobility and breath work to close the day.</p>
+              <p class="card-meta"><span>60 min</span><span>Intensity ●○○○</span></p>
+            </div>
+          </article>
+          <article class="class-card" data-cat="hiit">
+            <div class="card-media"><img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&amp;fit=crop&amp;w=900&amp;q=75" alt="Heavy battle ropes on a dark gym floor" width="900" height="1125" loading="lazy"></div>
+            <div class="card-body">
+              <span class="card-tag">HIIT</span>
+              <h3>Rope &amp; Rhythm</h3>
+              <p>Short, savage intervals engineered for maximum output.</p>
+              <p class="card-meta"><span>40 min</span><span>Intensity ●●●●</span></p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TIMETABLE ============ -->
+    <section id="timetable" class="section timetable" aria-labelledby="timetable-title">
+      <div class="container tt-wrap">
+        <header class="section-head reveal">
+          <p class="eyebrow">Weekly Timetable</p>
+          <h2 id="timetable-title" class="section-title">Your week, <em>composed</em></h2>
+          <p class="section-sub">Reserve in the member app up to seven days ahead. Cancel free until two hours before.</p>
+        </header>
+
+        <div class="tt-card reveal">
+          <div class="day-tabs" role="tablist" aria-label="Choose a day">
+            <button type="button" class="day-tab is-active" role="tab" id="tab-Mon" data-day="Mon" aria-selected="true" aria-controls="tt-panel" tabindex="0">Mon</button>
+            <button type="button" class="day-tab" role="tab" id="tab-Tue" data-day="Tue" aria-selected="false" aria-controls="tt-panel" tabindex="-1">Tue</button>
+            <button type="button" class="day-tab" role="tab" id="tab-Wed" data-day="Wed" aria-selected="false" aria-controls="tt-panel" tabindex="-1">Wed</button>
+            <button type="button" class="day-tab" role="tab" id="tab-Thu" data-day="Thu" aria-selected="false" aria-controls="tt-panel" tabindex="-1">Thu</button>
+            <button type="button" class="day-tab" role="tab" id="tab-Fri" data-day="Fri" aria-selected="false" aria-controls="tt-panel" tabindex="-1">Fri</button>
+            <button type="button" class="day-tab" role="tab" id="tab-Sat" data-day="Sat" aria-selected="false" aria-controls="tt-panel" tabindex="-1">Sat</button>
+            <button type="button" class="day-tab" role="tab" id="tab-Sun" data-day="Sun" aria-selected="false" aria-controls="tt-panel" tabindex="-1">Sun</button>
+          </div>
+          <ul id="tt-panel" class="tt-panel" role="tabpanel" aria-labelledby="tab-Mon" tabindex="0">
+            <!-- Rows are rendered by script.js (section 8) -->
+            <li><span class="tt-time">06:00</span><span class="tt-name">Iron Foundations<span>with Marcus Hale</span></span><span class="tt-tag">Strength</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRICING ============ -->
+    <section id="pricing" class="section pricing" aria-labelledby="pricing-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Membership</p>
+          <h2 id="pricing-title" class="section-title">Three ways to <em>belong</em></h2>
+          <p class="section-sub">No joining fee. No lock-in. Pause or upgrade whenever life changes.</p>
+        </header>
+
+        <div class="billing reveal">
+          <span class="billing-opt is-active" data-bill="monthly">Monthly</span>
+          <button type="button" id="billing" class="switch" role="switch" aria-checked="false" aria-label="Bill yearly and save 20 percent"><span class="knob"></span></button>
+          <span class="billing-opt" data-bill="yearly">Yearly <small>save 20%</small></span>
+        </div>
+
+        <div class="plan-grid" data-stagger>
+          <article class="plan">
+            <h3>Core</h3>
+            <p class="plan-desc">Everything you need to train with purpose.</p>
+            <p class="price"><sup>$</sup><span data-price="149">149</span><small>/ month</small></p>
+            <ul class="plan-list">
+              <li><svg width="18" height="18" aria-hidden="true"><use href="#i-check"/></svg>Unlimited gym floor access</li>
+              <li><svg width="18" height="18" aria-hidden="true"><use href="#i-check"/></svg>6 classes per month</li>
+              <li><svg width="18" height="18" aria-hidden="true"><use href="#i-check"/></svg>Quarterly performance check</li>
+              <li><svg width="18" height="18" aria-hidden="true"><use href="#i-check"/></svg>Towel &amp; locker service</li>
+            </ul>
+            <a class="btn btn-ghost btn-magnetic" href="#contact"><span>Choose Core</span></a>
+          </article>
+
+          <article class="plan plan-featured">
+            <span class="plan-badge">Most chosen</span>
+            <h3>Elite</h3>
+            <p class="plan-desc">Unlimited classes and the full recovery atelier.</p>
+            <p class="price"><sup>$</sup><span data-price="289">289</span><small>/ month</small></p>
+            <ul class="plan-list">
+              <li><svg width="18" height="18" aria-hidden="true"><use href="#i-check"/></svg>Unlimited classes</li>
+              <li><svg width="18" height="18" aria-hidden="true"><use href="#i-check"/></svg>Recovery atelier access</li>
+              <li><svg width="18" height="18" aria-hidden="true"><use href="#i-check"/></svg>2 coaching sessions monthly</li>
+              <li><svg width="18" height="18" aria-hidden="true"><use href="#i-check"/></svg>Nutrition consultation</li>
+              <li><svg width="18" height="18" aria-hidden="true"><use href="#i-check"/></svg>2 guest passes per month</li>
+            </ul>
+            <a class="btn btn-primary btn-magnetic" href="#contact"><span>Choose Elite</span></a>
+          </article>
+
+          <article class="plan">
+            <h3>Black</h3>
+            <p class="plan-desc">A fully bespoke programme, by invitation.</p>
+            <p class="price"><sup>$</sup><span data-price="590">590</span><small>/ month</small></p>
+            <ul class="plan-list">
+              <li><svg width="18" height="18" aria-hidden="true"><use href="#i-check"/></svg>Dedicated personal coach</li>
+              <li><svg width="18" height="18" aria-hidden="true"><use href="#i-check"/></svg>Private suite &amp; priority hours</li>
+              <li><svg width="18" height="18" aria-hidden="true"><use href="#i-check"/></svg>Monthly bloodwork &amp; plan</li>
+              <li><svg width="18" height="18" aria-hidden="true"><use href="#i-check"/></svg>Unlimited guests</li>
+              <li><svg width="18" height="18" aria-hidden="true"><use href="#i-check"/></svg>Concierge &amp; travel programming</li>
+            </ul>
+            <a class="btn btn-ghost btn-magnetic" href="#contact"><span>Request Black</span></a>
+          </article>
+        </div>
+        <p class="fineprint reveal">Sample pricing for a fictional club. Yearly billing is shown at 20% less per month.</p>
+      </div>
+    </section>
+
+    <!-- ============ TRANSFORMATIONS ============ -->
+    <section id="transformations" class="section transformations" aria-labelledby="transformations-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Results</p>
+          <h2 id="transformations-title" class="section-title">Proof, <em>not promises</em></h2>
+          <p class="section-sub">Drag the handle to compare. Sample stories from fictional members.</p>
+        </header>
+
+        <div class="ba-layout">
+          <div class="ba-frame reveal" id="ba-frame" style="--pos: 50%">
+            <img id="ba-after" class="ba-img ba-after" src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" alt="After: the same member twelve weeks later" width="1600" height="900" loading="lazy" draggable="false">
+            <img id="ba-before" class="ba-img ba-before" src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" alt="Before: training at the start of the programme" width="1600" height="900" loading="lazy" draggable="false">
+            <span class="ba-label ba-label-before" aria-hidden="true">Before</span>
+            <span class="ba-label ba-label-after" aria-hidden="true">After</span>
+            <div id="ba-handle" class="ba-handle" role="slider" tabindex="0" aria-label="Before and after comparison" aria-orientation="horizontal" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+              <span class="ba-grip"><svg width="16" height="16" aria-hidden="true"><use href="#i-arrow-left"/></svg><svg width="16" height="16" aria-hidden="true"><use href="#i-arrow-right"/></svg></span>
+            </div>
+          </div>
+
+          <div class="story-list reveal" role="group" aria-label="Choose a member story">
+            <button type="button" class="story-btn is-active" aria-pressed="true">
+              <strong>Daniel, 41</strong><span>Surgeon · 12 weeks · −9 kg body fat</span>
+            </button>
+            <button type="button" class="story-btn" aria-pressed="false">
+              <strong>Marcus, 33</strong><span>Founder · 6 months · +18 kg on deadlift</span>
+            </button>
+            <button type="button" class="story-btn" aria-pressed="false">
+              <strong>Sofia, 29</strong><span>Designer · 9 months · first amateur bout</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CALCULATOR ============ -->
+    <section id="calculator" class="section calculator" aria-labelledby="calculator-title">
+      <div class="container calc-grid">
+        <div class="calc-intro reveal">
+          <p class="eyebrow">Know your baseline</p>
+          <h2 id="calculator-title" class="section-title">BMI &amp; <em>calorie</em> calculator</h2>
+          <p class="lead">A quick estimate to start the conversation. Your coach will refine it with real testing during your first performance review.</p>
+          <p class="fineprint">Estimates use the Mifflin–St Jeor equation and are not medical advice.</p>
+        </div>
+
+        <div class="calc-card reveal">
+          <form id="calc-form" novalidate>
+            <fieldset class="seg">
+              <legend>Sex</legend>
+              <label><input type="radio" name="sex" value="male" checked><span>Male</span></label>
+              <label><input type="radio" name="sex" value="female"><span>Female</span></label>
+            </fieldset>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="calc-age">Age</label>
+                <input id="calc-age" name="age" type="number" inputmode="numeric" min="16" max="90" placeholder="32" aria-describedby="calc-age-err">
+                <p class="field-error" id="calc-age-err" data-error-for="age"></p>
+              </div>
+              <div class="field">
+                <label for="calc-height">Height (cm)</label>
+                <input id="calc-height" name="height" type="number" inputmode="decimal" min="120" max="230" placeholder="178" aria-describedby="calc-height-err">
+                <p class="field-error" id="calc-height-err" data-error-for="height"></p>
+              </div>
+              <div class="field">
+                <label for="calc-weight">Weight (kg)</label>
+                <input id="calc-weight" name="weight" type="number" inputmode="decimal" min="35" max="250" placeholder="76" aria-describedby="calc-weight-err">
+                <p class="field-error" id="calc-weight-err" data-error-for="weight"></p>
+              </div>
+            </div>
+
+            <div class="field-row two">
+              <div class="field">
+                <label for="calc-activity">Activity level</label>
+                <select id="calc-activity" name="activity">
+                  <option value="1.2">Desk-bound, little exercise</option>
+                  <option value="1.375">Light: 1–2 sessions a week</option>
+                  <option value="1.55" selected>Moderate: 3–4 sessions a week</option>
+                  <option value="1.725">High: 5–6 sessions a week</option>
+                  <option value="1.9">Athlete: twice daily</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="calc-goal">Goal</label>
+                <select id="calc-goal" name="goal">
+                  <option value="-0.15">Lose fat</option>
+                  <option value="0" selected>Maintain</option>
+                  <option value="0.1">Build muscle</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="calc-actions">
+              <button type="submit" class="btn btn-primary btn-magnetic"><span>Calculate</span></button>
+              <button type="reset" class="btn btn-ghost" id="calc-reset"><span>Reset</span></button>
+            </div>
+          </form>
+
+          <div id="calc-result" class="calc-result" aria-live="polite" hidden>
+            <div class="bmi-row">
+              <div>
+                <p class="result-label">Your BMI</p>
+                <p class="result-big"><span id="bmi-value">0</span> <small id="bmi-cat"></small></p>
+              </div>
+              <div class="bmi-scale" aria-hidden="true">
+                <span class="bmi-marker" id="bmi-marker"></span>
+                <span class="seg-u">Under</span><span class="seg-h">Healthy</span><span class="seg-o">Over</span><span class="seg-ob">Obese</span>
+              </div>
+            </div>
+            <div class="result-cols">
+              <div><p class="result-label">Maintenance</p><p class="result-mid"><span id="cal-maint">0</span> <small>kcal/day</small></p></div>
+              <div><p class="result-label">Daily target</p><p class="result-mid gold"><span id="cal-target">0</span> <small>kcal/day</small></p></div>
+            </div>
+            <ul class="macros">
+              <li><span>Protein</span><strong><span id="macro-p">0</span> g</strong></li>
+              <li><span>Carbs</span><strong><span id="macro-c">0</span> g</strong></li>
+              <li><span>Fat</span><strong><span id="macro-f">0</span> g</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TESTIMONIALS ============ -->
+    <section id="testimonials" class="section testimonials" aria-labelledby="testimonials-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Members Speak</p>
+          <h2 id="testimonials-title" class="section-title">Quietly <em>devoted</em></h2>
+        </header>
+
+        <div class="t-slider reveal" id="t-slider" aria-roledescription="carousel" aria-label="Member testimonials">
+          <div class="t-viewport">
+            <div class="t-track" id="t-track">
+              <figure class="t-slide" aria-roledescription="slide" aria-label="1 of 4">
+                <svg class="t-quote" width="40" height="40" aria-hidden="true"><use href="#i-quote"/></svg>
+                <blockquote>The only place I have trained where nobody is performing for the camera. It is just serious work, beautifully run.</blockquote>
+                <figcaption><span class="avatar" aria-hidden="true">DR</span><strong>Daniel Reyes</strong><span>Cardiac surgeon, member since 2019</span></figcaption>
+              </figure>
+              <figure class="t-slide" aria-roledescription="slide" aria-label="2 of 4">
+                <svg class="t-quote" width="40" height="40" aria-hidden="true"><use href="#i-quote"/></svg>
+                <blockquote>My coach rebuilt my squat from the ground up. Eighteen months later I am stronger than I was at twenty-five.</blockquote>
+                <figcaption><span class="avatar" aria-hidden="true">MT</span><strong>Marcus Thorne</strong><span>Startup founder, member since 2021</span></figcaption>
+              </figure>
+              <figure class="t-slide" aria-roledescription="slide" aria-label="3 of 4">
+                <svg class="t-quote" width="40" height="40" aria-hidden="true"><use href="#i-quote"/></svg>
+                <blockquote>The recovery atelier alone is worth it. I sleep better, move better and, frankly, argue less with my knees.</blockquote>
+                <figcaption><span class="avatar" aria-hidden="true">AL</span><strong>Amelia Laurent</strong><span>Architect, member since 2020</span></figcaption>
+              </figure>
+              <figure class="t-slide" aria-roledescription="slide" aria-label="4 of 4">
+                <svg class="t-quote" width="40" height="40" aria-hidden="true"><use href="#i-quote"/></svg>
+                <blockquote>I walked in nervous about boxing. Rico had me throwing clean combinations by week three. Impeccable standards, zero ego.</blockquote>
+                <figcaption><span class="avatar" aria-hidden="true">SK</span><strong>Sofia Karim</strong><span>Product designer, member since 2022</span></figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="t-controls">
+            <button type="button" class="icon-btn t-prev" aria-label="Previous testimonial"><svg width="20" height="20" aria-hidden="true"><use href="#i-arrow-left"/></svg></button>
+            <div class="t-dots" role="group" aria-label="Choose testimonial"></div>
+            <button type="button" class="icon-btn t-next" aria-label="Next testimonial"><svg width="20" height="20" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GALLERY ============ -->
+    <section id="gallery" class="section gallery" aria-labelledby="gallery-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Inside IRONVEIL</p>
+          <h2 id="gallery-title" class="section-title">The <em>details</em></h2>
+          <p class="section-sub">Select any image to view it full size.</p>
+        </header>
+
+        <div class="gallery-grid" data-stagger>
+          <button type="button" class="gallery-item g-tall" data-full="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" data-caption="The platform floor at first light">
+            <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&amp;fit=crop&amp;w=800&amp;q=75" alt="Athlete's torso silhouetted behind a squat rack" width="800" height="1000" loading="lazy">
+          </button>
+          <button type="button" class="gallery-item" data-full="https://images.unsplash.com/photo-1550345332-09e3ac987658?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" data-caption="Focus between sets">
+            <img src="https://images.unsplash.com/photo-1550345332-09e3ac987658?auto=format&amp;fit=crop&amp;w=800&amp;q=75" alt="Woman resting between sets in a dark gym" width="800" height="600" loading="lazy">
+          </button>
+          <button type="button" class="gallery-item" data-full="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" data-caption="Chalk, iron and patience">
+            <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&amp;fit=crop&amp;w=800&amp;q=75" alt="Lifter crouching before a heavy pull" width="800" height="600" loading="lazy">
+          </button>
+          <button type="button" class="gallery-item g-wide" data-full="https://images.unsplash.com/photo-1593476123561-9516f2097158?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" data-caption="Calibrated plates, always in order">
+            <img src="https://images.unsplash.com/photo-1593476123561-9516f2097158?auto=format&amp;fit=crop&amp;w=1000&amp;q=75" alt="Weight plates and a barbell on the gym floor" width="1000" height="600" loading="lazy">
+          </button>
+          <button type="button" class="gallery-item g-tall" data-full="https://images.unsplash.com/photo-1534367610401-9f5ed68180aa?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" data-caption="Strength, in detail">
+            <img src="https://images.unsplash.com/photo-1534367610401-9f5ed68180aa?auto=format&amp;fit=crop&amp;w=800&amp;q=75" alt="Tattooed arm gripping a pull-up bar" width="800" height="600" loading="lazy">
+          </button>
+          <button type="button" class="gallery-item" data-full="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" data-caption="The studio, mid-class">
+            <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&amp;fit=crop&amp;w=800&amp;q=75" alt="Members in a mobility class on pink mats" width="800" height="600" loading="lazy">
+          </button>
+          <button type="button" class="gallery-item" data-full="https://images.unsplash.com/photo-1596357395217-80de13130e92?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" data-caption="Natural light on the lower floor">
+            <img src="https://images.unsplash.com/photo-1596357395217-80de13130e92?auto=format&amp;fit=crop&amp;w=800&amp;q=75" alt="Lifter training beside large gym windows" width="800" height="600" loading="lazy">
+          </button>
+          <button type="button" class="gallery-item g-wide" data-full="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" data-caption="Evening mobility practice">
+            <img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?auto=format&amp;fit=crop&amp;w=800&amp;q=75" alt="Person stretching on a mat in low light" width="800" height="600" loading="lazy">
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section id="faq" class="section faq" aria-labelledby="faq-title">
+      <div class="container faq-grid">
+        <header class="section-head left reveal">
+          <p class="eyebrow">Questions</p>
+          <h2 id="faq-title" class="section-title">Good to <em>know</em></h2>
+          <p class="section-sub">Cannot find your answer? Write to us below and a membership director will reply within one working day.</p>
+        </header>
+
+        <div class="faq-list reveal">
+          <div class="faq-item">
+            <h3><button type="button" class="faq-q" id="faq-q1" aria-expanded="false" aria-controls="faq-a1"><span>Is IRONVEIL open to the public?</span><i aria-hidden="true"></i></button></h3>
+            <div class="faq-a" id="faq-a1" role="region" aria-labelledby="faq-q1" inert><div><p>No. Membership is capped at 480 and granted after a private tour. Members may bring guests using their monthly passes.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <h3><button type="button" class="faq-q" id="faq-q2" aria-expanded="false" aria-controls="faq-a2"><span>Can I try the club before joining?</span><i aria-hidden="true"></i></button></h3>
+            <div class="faq-a" id="faq-a2" role="region" aria-labelledby="faq-q2" inert><div><p>Yes. Every prospective member receives a private tour and a complimentary coached session so you can experience the standard first-hand.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <h3><button type="button" class="faq-q" id="faq-q3" aria-expanded="false" aria-controls="faq-a3"><span>Do you offer personal training?</span><i aria-hidden="true"></i></button></h3>
+            <div class="faq-a" id="faq-a3" role="region" aria-labelledby="faq-q3" inert><div><p>Elite includes two coaching sessions a month, and Black includes a dedicated coach. Additional sessions can be booked at any time through the concierge.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <h3><button type="button" class="faq-q" id="faq-q4" aria-expanded="false" aria-controls="faq-a4"><span>How do freezes and cancellations work?</span><i aria-hidden="true"></i></button></h3>
+            <div class="faq-a" id="faq-a4" role="region" aria-labelledby="faq-q4" inert><div><p>There is no lock-in. Pause for up to three months a year, or cancel with thirty days' notice. Yearly plans are refunded pro rata.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <h3><button type="button" class="faq-q" id="faq-q5" aria-expanded="false" aria-controls="faq-a5"><span>What is included in the recovery atelier?</span><i aria-hidden="true"></i></button></h3>
+            <div class="faq-a" id="faq-a5" role="region" aria-labelledby="faq-q5" inert><div><p>Contrast cold plunge and thermal suite, compression boots, guided mobility, and massage by appointment. Elite and Black members have full access.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <h3><button type="button" class="faq-q" id="faq-q6" aria-expanded="false" aria-controls="faq-a6"><span>Is there an age requirement?</span><i aria-hidden="true"></i></button></h3>
+            <div class="faq-a" id="faq-a6" role="region" aria-labelledby="faq-q6" inert><div><p>Members must be 18 or older. Under-18 athletes may train in supervised sessions when accompanied by a member parent or guardian.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="section contact" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+        <div class="contact-info reveal">
+          <p class="eyebrow">Private Tours</p>
+          <h2 id="contact-title" class="section-title">Request your <em>invitation</em></h2>
+          <p class="lead">Tell us a little about your goals and we will arrange a private tour and a complimentary session.</p>
+          <ul class="contact-list">
+            <li><svg width="22" height="22" aria-hidden="true"><use href="#i-pin"/></svg><span>21 Foundry Lane, Westmere<br>(fictional sample address)</span></li>
+            <li><svg width="22" height="22" aria-hidden="true"><use href="#i-clock"/></svg><span>Mon–Fri 05:30–22:00<br>Sat–Sun 07:00–20:00</span></li>
+            <li><svg width="22" height="22" aria-hidden="true"><use href="#i-phone"/></svg><span>+1 (555) 014-2290</span></li>
+            <li><svg width="22" height="22" aria-hidden="true"><use href="#i-mail"/></svg><span>membership@ironveil.example</span></li>
+          </ul>
+        </div>
+
+        <div class="contact-card reveal">
+          <form id="contact-form" novalidate>
+            <div class="field">
+              <label for="c-name">Full name <span aria-hidden="true">*</span></label>
+              <input id="c-name" name="name" type="text" autocomplete="name" required aria-describedby="c-name-err">
+              <p class="field-error" id="c-name-err" data-error-for="name"></p>
+            </div>
+            <div class="field-row two">
+              <div class="field">
+                <label for="c-email">Email <span aria-hidden="true">*</span></label>
+                <input id="c-email" name="email" type="email" autocomplete="email" required aria-describedby="c-email-err">
+                <p class="field-error" id="c-email-err" data-error-for="email"></p>
+              </div>
+              <div class="field">
+                <label for="c-phone">Phone <small>(optional)</small></label>
+                <input id="c-phone" name="phone" type="tel" autocomplete="tel" aria-describedby="c-phone-err">
+                <p class="field-error" id="c-phone-err" data-error-for="phone"></p>
+              </div>
+            </div>
+            <div class="field">
+              <label for="c-interest">I am interested in</label>
+              <select id="c-interest" name="interest">
+                <option>A private tour</option>
+                <option>Core membership</option>
+                <option>Elite membership</option>
+                <option>Black membership</option>
+                <option>Corporate partnerships</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="c-message">Message <span aria-hidden="true">*</span></label>
+              <textarea id="c-message" name="message" rows="5" required aria-describedby="c-message-err"></textarea>
+              <p class="field-error" id="c-message-err" data-error-for="message"></p>
+            </div>
+            <button type="submit" class="btn btn-primary btn-magnetic btn-block"><span>Send request</span><svg width="18" height="18" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+            <p class="form-success" id="contact-success" role="status" hidden>Thank you. Your request has been received (demo only, nothing was sent). A membership director would reply within one working day.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="#top" aria-label="IRONVEIL — back to top"><svg width="30" height="30" aria-hidden="true"><use href="#i-logo"/></svg><span>IRONVEIL</span></a>
+        <p>Private Performance Club. Discipline, refined.</p>
+        <ul class="socials">
+          <li><a href="#top" aria-label="Instagram (sample link)"><svg width="20" height="20" aria-hidden="true"><use href="#i-instagram"/></svg></a></li>
+          <li><a href="#top" aria-label="X (sample link)"><svg width="20" height="20" aria-hidden="true"><use href="#i-x"/></svg></a></li>
+          <li><a href="#top" aria-label="YouTube (sample link)"><svg width="20" height="20" aria-hidden="true"><use href="#i-youtube"/></svg></a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h2>Explore</h2>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#classes">Classes</a></li>
+          <li><a href="#pricing">Membership</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-news">
+        <h2>The Veil Letter</h2>
+        <p>One considered email a month: training notes, recovery science, club news.</p>
+        <form id="newsletter-form" novalidate>
+          <label for="nl-email" class="sr-only">Email address</label>
+          <div class="nl-row">
+            <input id="nl-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" aria-describedby="newsletter-msg">
+            <button type="submit" class="btn btn-primary"><span>Subscribe</span></button>
+          </div>
+          <p class="nl-msg" id="newsletter-msg" role="status"></p>
+        </form>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="year">2026</span> IRONVEIL Private Performance Club. A fictional portfolio project.</p>
+      <p>Photography via Unsplash.</p>
+    </div>
+  </footer>
+
+  <!-- Back to top with scroll-progress ring -->
+  <button type="button" class="to-top" aria-label="Back to top">
+    <svg class="ring" width="52" height="52" viewBox="0 0 52 52" aria-hidden="true">
+      <circle class="ring-bg" cx="26" cy="26" r="22"/>
+      <circle class="ring-fg" cx="26" cy="26" r="22"/>
+    </svg>
+    <svg class="arrow" width="18" height="18" aria-hidden="true"><use href="#i-arrow-up"/></svg>
+  </button>
+
+  <!-- Gallery lightbox -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" aria-hidden="true" inert>
+    <button type="button" class="lb-close icon-btn" aria-label="Close viewer"><svg width="22" height="22" aria-hidden="true"><use href="#i-close"/></svg></button>
+    <button type="button" class="lb-prev icon-btn" aria-label="Previous image"><svg width="22" height="22" aria-hidden="true"><use href="#i-arrow-left"/></svg></button>
+    <figure class="lb-figure">
+      <img class="lb-img" src="" alt="">
+      <figcaption><span class="lb-caption"></span><span class="lb-count" aria-live="polite"></span></figcaption>
+    </figure>
+    <button type="button" class="lb-next icon-btn" aria-label="Next image"><svg width="22" height="22" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
